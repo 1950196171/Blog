@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>个人博客 - 一个技术员个人博客网站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/static/home/css/base.css" rel="stylesheet">
+<link href="/static/home/css/index.css" rel="stylesheet">
+<link href="/static/home/css/m.css" rel="stylesheet">
+<script src="/static/home/js/jquery.min.js" ></script>
+<script src="/static/home/js/hc-sticky.js"></script>
+<script src="/static/home/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="/static/home/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+{include file="common/header"}
+<div class="wrapper">
+  <main>
+   <h2 class="place"><a href="/">最热标签</a></h2>
+    <div class="sharelist">
+   
+<ul>
+    {foreach $data as $v} 
+        <li>
+          <div class="tpic"><img src="{$v.sml}"></div>
+          <b>{$v.title}</b><span>{$v.description}</span><a href="/home_content/{$v.id}" class="readmore">阅读原文</a></li>
+    {/foreach}
+      </ul>
+    </div>
+    <!--bloglist end--> 
+  </main>
+  <aside class="sidebar">
+    <div class="fenlei">
+      <ul class="flnav">
+        <li class="flselect"><a href="#" title="最新文章" class="pall"></a></li>
+        <li><a href="#" title="站长推荐" class="pgood"></a></li>
+        <li><a href="#" title="点击排行" class="pbro"></a></li>
+        <li><a href="#" title="头条关注" class="pfav"></a></li>
+      </ul>
+    </div>
+   {include file="common/right"}
+
+
+
+  </aside>
+  <!--sidebar end--> 
+</div>
+<!--wrapper end-->
+{include file="common/footer"}
+<a href="#" class="cd-top">Top</a>
+</body>
+</html>

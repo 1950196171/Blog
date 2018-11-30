@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>个人博客 - 一个技术员个人博客网站</title>
+<link href="/static/home/css/base.css" rel="stylesheet">
+<link href="/static/home/css/index.css" rel="stylesheet">
+<link href="/static/home/css/m.css" rel="stylesheet">
+<script src="/static/home/js/jquery.min.js" ></script>
+<script src="/static/home/js/hc-sticky.js"></script>
+<script src="/static/home/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<style type="text/css">
+  *{margin:0px; padding:0px;}
+  body{background:url("images/bg.jpg");}
+  #qq{width:600px;/*宽*/height:170px;/*高*/background:#fff;/*背景颜色*/
+    margin:50px auto 30px; border-radius:5px;/*Html5 圆角*/}
+  #qq p{font-size:12px; color:#666; font-family:"微软雅黑";
+      line-height:45px; text-indent:20px;}
+  #qq .message{width:560px; height:70px;margin:0px auto; outline:none;
+        border:1px solid #ddd; /*粗细 风格 颜色*/}
+  #qq .But{width:560px;height:35px;margin:15px auto 0px; position:relative;/*相对，参考对象*/}
+  #qq .But img.bq{float:left;/*左浮动*/}
+  #qq .But span.submit{width:80px;height:30px; background:#ff8140;					display:block; float:right;/*右浮动*/								line-height:30px;border-radius:5px;								cursor:pointer;/*手指*/color:#fff;font-size:12px;					text-align:center;font-family:"微软雅黑";}
+  
+  /*face begin*/
+  #qq .But .face{width:390px; height:160px; background:#fff; padding:10px;
+          border:1px solid #ddd; box-shadow:2px 2px 3px #666;
+          position:absolute;/*绝对定位*/ top:21px; left:15px;
+          display:none;/*隐藏*/}
+  #qq .But .face ul li{width:22px;height:22px; 
+          list-style-type:none;/*去掉圆点*/ float:left;
+          margin:2px; cursor:pointer;}
+  
+  /*msgCon begin*/
+  .msgCon{width:600px;height:500px; margin:0px auto;overflow: auto;}
+  .msgCon .msgBox{ background:#fff;
+          padding:10px; margin-top:20px;}
+  .msgCon .msgBox dl{height:60px; border-bottom:1px dotted #ddd;}
+  .msgCon .msgBox dl dt{width:50px; height:50px;float:left;}
+  .msgCon .msgBox dl dt img{border-radius:25px;}
+  .msgCon .msgBox dl dd{width:500px; height:50px;  line-height:50px;float:right; font-size:16px;font-family:"微软雅黑";}
+  .msgCon .msgBox .msgTxt{font-size:12px; color:#666; line-height:25px;}
+  .message img,.msgTxt img{ display: inline;}
+  
+  </style>
+<body>
+{include file="common/header"}
+<div class="wrapper">
+  <main>
+    <div class="aboutbox">
+      <div class="abinfos">
+        <h3>留言板</h3>
+                  <div id="qq">
+                    <h2>有什么意见或者建议请给我留言  我一定会收到的~ 谢谢~</h2>
+                    <div class="message" contentEditable='true'></div>
+                  
+                    <div class="But">
+                      <img src="/static/home/images/bba_thumb.gif" class='bq'/>
+                      <span class='submit'>发表</span>
+                      <!--face begin-->
+                      <div class="face">
+                        <ul>
+                          <li><img src="static/home/images/zz2_thumb.gif" title="[织]" ></li>
+                          <li><img src="static/home/images/horse2_thumb.gif" title="神马]"></li>
+                          <li><img src="static/home/images/fuyun_thumb.gif" title="[浮云]"></li>
+                          <li><img src="static/home/images/geili_thumb.gif" title="[给力]"></li>
+                          <li><img src="static/home/images/wg_thumb.gif" title="[围观]"></li>
+                          <li><img src="static/home/images/vw_thumb.gif" title="[威武]"></li>
+                          <li><img src="static/home/images/panda_thumb.gif" title="[熊猫]"></li>
+                          <li><img src="static/home/images/rabbit_thumb.gif" title="兔子]"></li>
+                          <li><img src="static/home/images/otm_thumb.gif" title="[奥特曼]"></li>
+                          <li><img src="static/home/images/j_thumb.gif" title="[囧]"></li>
+                          <li><img src="static/home/images/hufen_thumb.gif" title="[互粉]"></li>
+                          <li><img src="static/home/images/liwu_thumb.gif" title="[礼物]"></li>
+                          <li><img src="static/home/images/smilea_thumb.gif" title="呵呵]"></li>
+                          <li><img src="static/home/images/tootha_thumb.gif" title="嘻嘻]"></li>
+                          <li><img src="static/home/images/laugh.gif" title="[哈哈]"></li>
+                          <li><img src="static/home/images/tza_thumb.gif" title="[可爱]"></li>
+                          <li><img src="static/home/images/kl_thumb.gif" title="[可怜]"></li>
+                          <li><img src="static/home/images/kbsa_thumb.gif" title="[挖鼻屎]"></li>
+                          <li><img src="static/home/images/cj_thumb.gif" title="[吃惊]"></li>
+                          <li><img src="static/home/images/shamea_thumb.gif" title="[害羞]"></li>
+                          <li><img src="static/home/images/zy_thumb.gif" title="[挤眼]"></li>
+                          <li><img src="static/home/images/bz_thumb.gif" title="[闭嘴]"></li>
+                          <li><img src="static/home/images/bs2_thumb.gif" title="[鄙视]"></li>
+                          <li><img src="static/home/images/lovea_thumb.gif" title="[爱你]"></li>
+                          <li><img src="static/home/images/sada_thumb.gif" title="[泪]"></li>
+                          <li><img src="static/home/images/heia_thumb.gif" title="[偷笑]"></li>
+                          <li><img src="static/home/images/qq_thumb.gif" title="[亲亲]"></li>
+                          <li><img src="static/home/images/sb_thumb.gif" title="[生病]"></li>
+                          <li><img src="static/home/images/mb_thumb.gif" title="[太开心]"></li>
+                          <li><img src="static/home/images/ldln_thumb.gif" title="[懒得理你]"></li>
+                          <li><img src="static/home/images/yhh_thumb.gif" title="[右哼哼]"></li>
+                          <li><img src="static/home/images/zhh_thumb.gif" title="[左哼哼]"></li>
+                          <li><img src="static/home/images/x_thumb.gif" title="[嘘]"></li>
+                          <li><img src="static/home/images/cry.gif" title="[衰]"></li>
+                          <li><img src="static/home/images/wq_thumb.gif" title="[委屈]"></li>
+                          <li><img src="static/home/images/t_thumb.gif" title="[吐]"></li>
+                          <li><img src="static/home/images/k_thumb.gif" title="[打哈气]"></li>
+                          <li><img src="static/home/images/bba_thumb.gif" title="[抱抱]"></li>
+                          <li><img src="static/home/images/angrya_thumb.gif" title="[怒]"></li>
+                          <li><img src="static/home/images/yw_thumb.gif" title="[疑问]"></li>
+                          <li><img src="static/home/images/cza_thumb.gif" title="[馋嘴]"></li>
+                          <li><img src="static/home/images/88_thumb.gif" title="[拜拜]"></li>
+                          <li><img src="static/home/images/sk_thumb.gif" title="[思考]"></li>
+                          <li><img src="static/home/images/sweata_thumb.gif" title="[汗]"></li>
+                          <li><img src="static/home/images/sleepya_thumb.gif" title="[困]"></li>
+                          <li><img src="static/home/images/sleepa_thumb.gif" title="[睡觉]"></li>
+                          <li><img src="static/home/images/money_thumb.gif" title="[钱]"></li>
+                          <li><img src="static/home/images/sw_thumb.gif" title="[失望]"></li>
+                          <li><img src="static/home/images/cool_thumb.gif" title="[酷]"></li>
+                          <li><img src="static/home/images/hsa_thumb.gif" title="[花心]"></li>
+                          <li><img src="static/home/images/hatea_thumb.gif" title="[哼]"></li>
+                          <li><img src="static/home/images/gza_thumb.gif" title="[鼓掌]"></li>
+                          <li><img src="static/home/images/dizzya_thumb.gif" title="[晕]"></li>
+                          <li><img src="static/home/images/bs_thumb.gif" title="[悲伤]"></li>
+                          <li><img src="static/home/images/crazya_thumb.gif" title="[抓狂]"></li>
+                          <li><img src="static/home/images/h_thumb.gif" title="[黑线]"></li>
+                          <li><img src="static/home/images/yx_thumb.gif" title="[阴险]"></li>
+                          <li><img src="static/home/images/nm_thumb.gif" title="[怒骂]"></li>
+                          <li><img src="static/home/images/hearta_thumb.gif" title="[心]"></li>
+                          <li><img src="static/home/images/unheart.gif" title="[伤心]"></li>
+                          <li><img src="static/home/images/pig.gif" title="[猪头]"></li>
+                          <li><img src="static/home/images/ok_thumb.gif" title="[ok]"></li>
+                          <li><img src="static/home/images/ye_thumb.gif" title="[耶]"></li>
+                          <li><img src="static/home/images/good_thumb.gif" title="[good]"></li>
+                          <li><img src="static/home/images/no_thumb.gif" title="[不要]"></li>
+                          <li><img src="static/home/images/z2_thumb.gif" title="[赞]"></li>
+                          <li><img src="static/home/images/come_thumb.gif" title="[来]"></li>
+                          <li><img src="static/home/images/sad_thumb.gif" title="[弱]"></li>
+                          <li><img src="static/home/images/lazu_thumb.gif" title="[蜡烛]"></li>
+                          <li><img src="static/home/images/clock_thumb.gif" title="[钟]"></li>
+                          <li><img src="static/home/images/cake.gif" title="[蛋糕]"></li>
+                          <li><img src="static/home/images/m_thumb.gif" title="[话筒]"></li>
+                          <li><img src="static/home/images/weijin_thumb.gif" title="[围脖]"></li>
+                          <li><img src="static/home/images/lxhzhuanfa_thumb.gif" title="[转发]"></li>
+                          <li><img src="static/home/images/lxhluguo_thumb.gif" title="[路过这儿]"></li>
+                          <li><img src="static/home/images/bofubianlian_thumb.gif" title="[bofu变脸]"></li>
+                          <li><img src="static/home/images/gbzkun_thumb.gif" title="[gbz困]"></li>
+                          <li><img src="static/home/images/boboshengmenqi_thumb.gif" title="[生闷气]"></li>
+                          <li><img src="static/home/images/chn_buyaoya_thumb.gif" title="[不要啊]"></li>
+                          <li><img src="static/home/images/daxiongleibenxiong_thumb.gif" title="[dx泪奔]"></li>
+                          <li><img src="static/home/images/cat_yunqizhong_thumb.gif" title="[运气中]"></li>
+                          <li><img src="static/home/images/youqian_thumb.gif" title="[有钱]"></li>
+                          <li><img src="static/home/images/cf_thumb.gif" title="[冲锋]"></li>
+                          <li><img src="static/home/images/camera_thumb.gif" title="[照相机]"></li>	
+                        </ul>
+                      </div>
+                      <!--face end-->
+                    </div>
+                  </div>
+                  <!--qq end-->
+                  <div id="time1"></div>
+                  <!--msgCon begin-->
+                  <div class="msgCon">
+                  
+                  
+                  
+                  
+                  </div>
+<script type="text/javascript" src="/static/home/js/jquery.min.js"></script>
+<script type="text/javascript">
+
+    //点击小图片，显示表情
+    $(".bq").click(function(e){
+      $(".face").slideDown();//慢慢向下展开
+      e.stopPropagation();   //阻止冒泡事件
+    });
+
+    //在桌面任意地方点击，他是关闭
+    $(document).click(function(){
+      $(".face").slideUp();//慢慢向上收
+    });
+
+    //点击小图标时，添加功能
+    $(".face ul li").click(function(){
+      var simg=$(this).find("img").clone();
+      $(".message").append(simg);
+    });
+
+    //点击发表按扭，发表内容
+    $("span.submit").click(function(){
+
+      var txt= $(".message").html();
+      if(txt==""){
+        $('.message').focus();//自动获取焦点
+        return;
+      }
+
+        var randName = [
+                        '單刀血杀',
+                        '狱中傲骨',
+                        '狼之战颜',
+                        '孤浪王者',
+                        '嗜血死神',
+                        '爺狠低调',
+                        '爷傲灬奈我何',
+                        '嘴在逞强泪在流',
+                        '古巷青磚',
+                        '趠凡兦聖',
+                        '↓厛颩淰舊↑',
+                        '櫻埖纞',
+                        '沐栀凝',
+                        '噯已凍結',
+                        '伱DE眼裡〆還冇涐庅',
+                        'Me、萌兎兎',
+                        '霸爺ㄝ仼緶媞涐',
+                        'х氾賤。べ',
+                        'o葒莕絀牆o',
+                        '／罘憂請赱幵',
+                        'τ职業萌榊*′ノ0',
+                        '掵運媞拼詘來の',
+                        '偏執怪 固執誑丶',
+                        '汜氺蓅哖',
+                        '不羁放緃のㄝ亽',
+                        '蘋淉犇',
+                        '幻影逐颩',
+                        '剰悇の迗眞',
+                        '↑縌偑←',
+                        '兂所謂の噯﹌',
+                        '蘫調魅影',
+                        '看透莂說透ゝ',
+                        '賤亽″滾幵',
+                        '換来の卻媞涙',
+                        'ｎｖ孒、請閃',
+                        '°縯繹夏傷ξ',
+                        '落櫻厛雨',
+                        'ゐㄋ伱_涐銩ㄋ整嗰丗堺',
+                        'Angel、雨兮c',
+                        '[长得醜 萿得久]',
+                        '砍死明迗の刀ゅ',
+                        '薄荷嶶涼ζ',
+                        '涐姓鬍涐不啈湢',
+                        '皇鏃〃偙',
+                        '-幵弜莈冇回頭箭',
+                        '妻子的诱惑',
+                        
+                        ];
+
+            var num = Math.floor(Math.random()*randName.length);
+            // console.log(num);
+
+            
+            var face_num = Math.floor(Math.random()*3+1);
+            // console.log(face_num);
+            $.ajax({
+                type:'POST',
+                url:'/h_comments',
+                dataType:'json',
+                data:{txt:txt,face_num:face_num,randName:randName[num]},
+                success:function(data){
+                  if(data){
+                    $(".msgCon").prepend("<div class='msgBox'><dl><dt><img src='/static/home/images/z"+face_num+".jpg' width='50' height='50'/></dt><dd>"+randName[num]+"</dd></dl><div class='msgTxt'>"+txt+"</div></div>");
+                    $(".message").html('');
+                  }
+                 
+                }
+            })
+
+      
+    });
+
+</script>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!--sidebar end--> 
+</div>
+<!--wrapper end-->
+{include file="common/footer"}
+<a href="#" class="cd-top">Top</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<header id="header">
+        <div class="navbar">
+          <div class="topbox">
+            <p class="welcome">欢迎光临Wyafana的博客</p>
+            <div class="searchbox">
+              <div id="search_bar" class="search_bar">
+                <form  id="searchform" action="[!--news.url--]e/search/index.php" method="post" name="searchform">
+                  <input class="input" placeholder="想搜点什么呢.." type="text" name="keyboard" id="keyboard">
+                  <input type="hidden" name="show" value="title" />
+                  <input type="hidden" name="tempid" value="1" />
+                  <input type="hidden" name="tbname" value="news">
+                  <input type="hidden" name="Submit" value="搜索" />
+                  <p class="search_ico"> <span></span></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-navigation">
+          <nav>
+            <a href="">Wyafana博客</a>
+            <h2 id="mnavh"><span class="navicon"></span></h2>
+            <ul id="starlist">
+              <!-- 首页 首先显示一个轮播  后台可以控制   内容放一些热度高的文章一个排序      右侧 最新文章  推荐   点击  头条   关注    关于本站   标签   图片  精选         -->
+              <!--  -->
+              <li class="active"><a href="/h_index">网站首页</a></li>
+              <li class="menu"><a href="/h_search/a">学无止境</a>
+                <ul class="sub">
+                    {foreach $data_h['column'] as $v}
+                   <li><a href="/h_search/{$v.id}"> {$v.column_name}</a></li>
+                  {/foreach}
+                </ul>
+              </li>
+              <li><a href="/h_comments">留言板</a></li>
+              <li><a href="/h_time">时间轴</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>

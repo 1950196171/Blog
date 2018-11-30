@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>首页</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="个人博客" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/static/home/css/base.css" rel="stylesheet">
+<link href="/static/home/css/index.css" rel="stylesheet">
+<!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/bootstrap.min.css"> -->
+<link href="/static/home/css/m.css" rel="stylesheet">
+<script src="/static/home/js/jquery.min.js" ></script>
+<script src="/static/home/js/hc-sticky.js"></script>
+<script src="/static/home/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="/static/home/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<style type="text/css">
+  #pull_right{
+      text-align:center;
+  }
+  .pull-right {
+      /*float: left!important;*/
+  }
+  .pagination {
+      display: inline-block;
+      padding-left: 0;
+      margin: 20px 0;
+      border-radius: 4px;
+  }
+  .pagination > li {
+      display: inline;
+  }
+  .pagination > li > a,
+  .pagination > li > span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      line-height: 1.42857143;
+      color: #428bca;
+      text-decoration: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+  }
+  .pagination > li:first-child > a,
+  .pagination > li:first-child > span {
+      margin-left: 0;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+  }
+  .pagination > li:last-child > a,
+  .pagination > li:last-child > span {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+  }
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus {
+      color: #2a6496;
+      background-color: #eee;
+      border-color: #ddd;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus {
+      z-index: 2;
+      color: #fff;
+      cursor: default;
+      background-color: #428bca;
+      border-color: #428bca;
+  }
+  .pagination > .disabled > span,
+  .pagination > .disabled > span:hover,
+  .pagination > .disabled > span:focus,
+  .pagination > .disabled > a,
+  .pagination > .disabled > a:hover,
+  .pagination > .disabled > a:focus {
+      color: #777;
+      cursor: not-allowed;
+      background-color: #fff;
+      border-color: #ddd;
+  }
+  .clear{
+      clear: both;
+  }
+  .bloglist{
+    float: none;
+  }
+</style>
+<body>
+{include file="common/header"}
+<div class="wrapper">
+  <main> 
+    <!--banner begin-->
+    <div class="fader_controls">
+    <div class="banner">
+      <div id="banner" class="fader">
+          {foreach $data_t as $v}
+          {if($v.state == 1)}
+           <li class="slide" ><a href="/h_content/{$v.id}" title="" target="_blank"><img src="{$v.big}"><span class="imginfo">{$v.description}</span></a></li>
+             
+        <div class="page prev" data-target="prev">&lsaquo;</div>
+          <div class="page next" data-target="next">&rsaquo;</div>
+          <ul class="pager_list">
+          </ul>
+          {else /}
+          {/if}
+          {/foreach} 
+        </div>
+      </div>
+    </div>
+    <!--banner end-->
+    <div class="bloglist">
+      
+      <ul>
+        {foreach $data_i['blog'] as $v}
+        <li> <i class="blogpic"><a href="/h_content/{$v.id}"><img src="{$v.mid}" alt=""> </a></i>
+          <dl>
+            <dt><a href="/h_content/{$v.id}" target="_blank">{$v.title}</a></dt>
+            <dd><span class="bloginfo">{$v.description}</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">{$v.label}</a></span><span class="date">{$v.created_at}</span></p>
+              <a class="read" href="/h_content/{$v.id}">阅读更多</a> </dd>
+          </dl>
+        </li>
+        {/foreach}
+      
+      
+
+       
+      </ul>
+    </div>
+  {$data_i['blog']|raw}
+    <!--bloglist end--> 
+  </main>
+  <aside class="sidebar">
+    <div class="fenlei">
+      <ul class="flnav">
+        <li class="flselect"><a href="#" title="最新文章" class="pall"></a></li>
+        <li><a href="#" title="站长推荐" class="pgood"></a></li>
+        <li><a href="#" title="点击排行" class="pbro"></a></li>
+        <li><a href="#" title="头条关注" class="pfav"></a></li>
+      </ul>
+    </div>
+    {include file="common/right"}
+
+
+
+    <div class="links">
+      <h2 class="hometitle">友情链接</h2>
+      <ul>
+        <li><a href="http://www.yangqq.com">王震</a></li>
+        <li><a href="http://www.searchtrip.cn">许若尘</a></li>
+        <li><a href="http://www.yangqq.com/download/">陈意涵</a></li>
+        <li><a href="http://www.yangqq.com/link.html">黑凤梨</a></li>
+      </ul>
+    </div>
+  </aside>
+  <!--sidebar end--> 
+</div>
+<!--wrapper end-->
+{include file='common/footer'}
+<a href="#" class="cd-top">Top</a>
+</body>
+</html>

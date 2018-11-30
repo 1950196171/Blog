@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>内容页_个人博客 - 一个技术员个人博客网站</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/static/home/css/base.css" rel="stylesheet">
+<link href="/static/home/css/index.css" rel="stylesheet">
+<link href="/static/home/css/m.css" rel="stylesheet">
+<script src="/static/home/js/jquery.min.js" ></script>
+<script src="/static/home/js/hc-sticky.js"></script>
+<script src="/static/home/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="/static/home/js/modernizr.js"></script>
+<![endif]-->
+</head>
+
+<style type="text/css">
+	.hreate{ width: 20px; height: 20px; position: absolute;  left: 50%; margin-left: -10px; }
+	#btn-zan{ position: absolute; 
+
+	}
+</style>
+
+<body>
+{include file="common/header"}
+
+<div class="wrapper">
+  <main>
+<h2 class="place"><a href="/">文章内容</a></h2>
+
+    <div class="infosbox">
+      <div class="newsview">
+        <h3 class="news_title">{$data.data.title}</h3>
+        <div class="bloginfo">
+          <ul>
+            <li class="author"> </li>
+            <li class="lmname">{$data.data.column_id}</li>
+            <li class="timer">{$data.data.created_at}</li>
+            <li class="view">{$data.data.look}人已阅读</li>
+          </ul>
+        </div>
+        <div class="tags">
+          {foreach $data['label'] as $k=>$v}  
+          <a href="/home/index/label/<?php echo base64_encode($v)?>" target="_blank">{$v}</a> &nbsp;
+          {/foreach}
+        </div>
+        <div class="news_about"><strong>简介：</strong>{$data.data.description}</div>
+        <div class="news_con"><?php echo $data['data']->content ?></div>
+      </div>
+      <div class="share">
+          <a  id="btn-zan" >  <p class="diggit">怒赞！{$data.data.top} </p></a>
+      </div>
+
+      <div class="otherlink">
+        <h2>相关文章</h2>
+        <ul>
+          {foreach $data['xgwz'][0] as $v}
+          <li><a href="/h_content/{$v.id}" title="{$v.title}">{$v.title}</a></li>
+          {/foreach}
+        </ul>
+      </div>
+    
+    </div>
+  </main>
+  <aside class="sidebar">
+    <div class="fenlei">
+      <ul class="flnav">
+        <li class="flselect"><a href="#" title="最新文章" class="pall"></a></li>
+        <li><a href="#" title="站长推荐" class="pgood"></a></li>
+        <li><a href="#" title="点击排行" class="pbro"></a></li>
+        <li><a href="#" title="头条关注" class="pfav"></a></li>
+      </ul>
+    </div>
+    {include file="common/right"}
+
+  </aside>
+  <!--sidebar end--> 
+</div>
+<!--wrapper end-->
+{include file="common/footer"}
+<a href="#" class="cd-top">Top</a>
+</body>
+</html>
+<script>
+  $("#btn-zan").click(function(){
+    var x = 100;
+      var y = 900;
+      var num = Math.floor(Math.random()*2+1);
+      // console.log(num);
+      var rand = parseInt(Math.random()*(x-y+1)+y);
+      var a = new Date().getTime();
+      var cName = 'm'+ a
+      var index = $(".share").children('img').length;
+      console.log(index);
+      $(".share").append("<img src=''>");
+      var src = '/static/home/images/'+num+'.png';
+      $('.share img:eq(' + index + ')').attr('src',src).addClass(cName).addClass('hreate')
+      $('.'+cName).animate({
+            bottom:"800",
+            opacity:"0",
+            left:rand,
+      },3000);
+      $.ajax({
+          type:"GET",
+          url:"/home/search/zan",
+          data:{id:{$data.data.id}},  
+          success:function(data){
+              if(data){
+                  $(".diggit").html('怒赞！'+data)
+              }
+          }
+      })
+  });
+</script>

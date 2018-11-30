@@ -1,0 +1,47 @@
+<div class="newstw">
+        <ul class="sidenews">
+          <h2>最新文章</h2>
+          {foreach $data_h['newArticle'] as $v}
+          <li> <i><img src="{$v.sml}"></i>
+            <p><a href="/h_content/{$v.id}">{$v.title}</a></p>
+            <span>{$v.created_at}</span> </li>
+            {/foreach}
+        </ul>
+        <ul class="sidenews">
+          <h2>站长推荐</h2>
+          {foreach $data_h['tui'] as $v}
+          <li> <i><img src="{$v.sml}"></i>
+            <p><a href="/h_content/{$v.id}">{$v.title}</a></p>
+            <span>{$v.created_at}</span> </li>
+          {/foreach}
+          </ul>
+        <ul class="sidenews">
+          <h2>点击排行</h2>
+          {foreach $data_h['zhan'] as $v}
+          <li> <i><img src="{$v.sml}"></i>
+            <p><a href="/h_content/{$v.id}">{$v.title}</a></p>
+            <span>{$v.created_at}</span> </li>
+          {/foreach}
+        </ul>
+        <ul class="sidenews">
+          <h2>头条关注</h2>
+          {foreach $data_h['guan'] as $v}
+          <li> <i><img src="{$v.sml}"></i>
+            <p><a href="/h_content/{$v.id}">{$v.title}</a></p>
+            <span>{$v.created_at}</span> </li>
+          {/foreach}
+        </ul>
+      </div>
+      <div class="tjlm">
+            <h2 class="hometitle">最热标签</h2>
+            <ul>
+              {foreach $data_h['label_data'] as $v}
+              <li>
+                
+                  <a href="/home/Index/label?label=<?php echo base64_encode($v->label) ?>">{$v->label}</a>
+                  <!-- <p>{$v->label}</p> -->
+
+              </li>
+              {/foreach}
+            </ul>
+          </div>
