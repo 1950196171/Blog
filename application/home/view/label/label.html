@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="gbk">
-<title>¸öÈË²©¿Í - Ò»¸ö¼¼ÊõÔ±¸öÈË²©¿ÍÍøÕ¾</title>
+<meta charset="utf-8">
+<title>ä¸ªäººåšå®¢ - ä¸€ä¸ªæŠ€æœ¯å‘˜ä¸ªäººåšå®¢ç½‘ç«™</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/static/home/css/base.css" rel="stylesheet">
@@ -19,14 +19,14 @@
 {include file="common/header"}
 <div class="wrapper">
   <main>
-   <h2 class="place"><a href="/">×îÈÈ±êÇ©</a></h2>
+   <h2 class="place"><a href="/">æœ€çƒ­æ ‡ç­¾</a></h2>
     <div class="sharelist">
    
 <ul>
     {foreach $data as $v} 
         <li>
           <div class="tpic"><img src="{$v.sml}"></div>
-          <b>{$v.title}</b><span>{$v.description}</span><a href="/home_content/{$v.id}" class="readmore">ÔÄ¶ÁÔ­ÎÄ</a></li>
+          <b>{$v.title}</b><span>{$v.description}</span><a href="/h_content/{$v.id}" class="readmore">é˜…è¯»åŸæ–‡</a></li>
     {/foreach}
       </ul>
     </div>
@@ -35,10 +35,10 @@
   <aside class="sidebar">
     <div class="fenlei">
       <ul class="flnav">
-        <li class="flselect"><a href="#" title="×îĞÂÎÄÕÂ" class="pall"></a></li>
-        <li><a href="#" title="Õ¾³¤ÍÆ¼ö" class="pgood"></a></li>
-        <li><a href="#" title="µã»÷ÅÅĞĞ" class="pbro"></a></li>
-        <li><a href="#" title="Í·Ìõ¹Ø×¢" class="pfav"></a></li>
+        <li class="flselect"><a href="#" title="æœ€æ–°æ–‡ç« " class="pall"></a></li>
+        <li><a href="#" title="ç«™é•¿æ¨è" class="pgood"></a></li>
+        <li><a href="#" title="ç‚¹å‡»æ’è¡Œ" class="pbro"></a></li>
+        <li><a href="#" title="å¤´æ¡å…³æ³¨" class="pfav"></a></li>
       </ul>
     </div>
    {include file="common/right"}
