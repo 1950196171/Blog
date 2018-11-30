@@ -4,7 +4,7 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
-use app\home\Model\HomeIndex;
+use app\home\model\HomeIndex;
 class Index extends Controller
 {
     /**
