@@ -7,6 +7,4 @@ use think\Model;
 class AdminCategory extends Model
 {
     protected $table = 'think_column';
-
-   
 }

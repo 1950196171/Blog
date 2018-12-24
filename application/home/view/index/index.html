@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="gbk">
+<meta charset="utf8">
 <title>首页</title>
 <meta name="keywords" content="个人博客" />
 <meta name="description" content="个人博客" />
@@ -103,16 +103,13 @@
     <div class="banner">
       <div id="banner" class="fader">
           {foreach $data_t as $v}
-          {if($v.state == 1)}
            <li class="slide" ><a href="/h_content/{$v.id}" title="" target="_blank"><img src="{$v.big}"><span class="imginfo">{$v.description}</span></a></li>
              
         <div class="page prev" data-target="prev">&lsaquo;</div>
           <div class="page next" data-target="next">&rsaquo;</div>
           <ul class="pager_list">
           </ul>
-          {else /}
-          {/if}
-          {/foreach} 
+          {/foreach}
         </div>
       </div>
     </div>
@@ -155,7 +152,7 @@
     <div class="links">
       <h2 class="hometitle">友情链接</h2>
       <ul>
-        <li><a href="http://www.yangqq.com">王震</a></li>
+        <li><a href="http://www.nbplus.wang">王震</a></li>
         <li><a href="http://www.searchtrip.cn">许若尘</a></li>
         <li><a href="http://www.yangqq.com/download/">陈意涵</a></li>
         <li><a href="http://www.yangqq.com/link.html">黑凤梨</a></li>

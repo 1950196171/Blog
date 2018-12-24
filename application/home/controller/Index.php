@@ -14,8 +14,8 @@ class Index extends Controller
      */
     public function index()
     {
-        $data['blog'] = HomeIndex::paginate(4);
-        $data['img'] = HomeIndex::select();
+        $data['blog'] = HomeIndex::where('state','0')->paginate(4);
+        $data['img'] = HomeIndex::where('state','1')->paginate(5);
         $data['right'] = HomeIndex::right();
         foreach($data['blog'] as $v){
             $data['blog']->column_id = $v->getCat->column_name;

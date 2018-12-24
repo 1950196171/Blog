@@ -24,7 +24,7 @@ class HomeIndex extends Model
         // 首页关注
         $guan = HomeIndex::order('guanzhu','desc')->paginate(5);
         // 首页标签
-        $label = HomeIndex::order('look','desc')->paginate(10);
+        $label = HomeIndex::order('look','desc')->paginate(6);
         $label_arr = [];
         foreach($label as $v){
             $label_arr[] = $v->id;

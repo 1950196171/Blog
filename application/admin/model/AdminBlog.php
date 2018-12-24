@@ -12,6 +12,8 @@ class AdminBlog extends Model
     public function getCat(){
        return $this->hasOne('AdminCategory','id','column_id');
     }
+
+
     public function insert($res){
         // dump('public'.$res->titlepic);
         // public\Uploads\image\20181115\1542276644682931.jpg

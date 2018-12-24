@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="gbk">
+<meta charset="utf8">
 <title>内容页_个人博客 - 一个技术员个人博客网站</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/static/home/css/base.css" rel="stylesheet">
@@ -41,7 +41,7 @@
           </ul>
         </div>
         <div class="tags">
-          {foreach $data['label'] as $k=>$v}  
+          {foreach $data['label'] as $k=>$v}
           <a href="/home/index/label/<?php echo base64_encode($v)?>" target="_blank">{$v}</a> &nbsp;
           {/foreach}
         </div>
@@ -50,12 +50,13 @@
       </div>
       <div class="share">
           <a  id="btn-zan" >  <p class="diggit">怒赞！{$data.data.top} </p></a>
+          <a  id="btn" >  <p class="diggit">支持作者 </p></a>
       </div>
 
       <div class="otherlink">
         <h2>相关文章</h2>
         <ul>
-          {foreach $data['xgwz'][0] as $v}
+          {foreach $data['xgwz'] as $v}
           <li><a href="/h_content/{$v.id}" title="{$v.title}">{$v.title}</a></li>
           {/foreach}
         </ul>
@@ -107,9 +108,12 @@
           data:{id:{$data.data.id}},  
           success:function(data){
               if(data){
-                  $(".diggit").html('怒赞！'+data)
+                  $("#btn-zan .diggit").html('怒赞！'+data)
               }
           }
       })
   });
+  $('#btn').click(function(){
+
+  })
 </script>
